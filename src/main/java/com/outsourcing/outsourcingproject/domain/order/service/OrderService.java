@@ -93,6 +93,21 @@ public class OrderService {
 			orderResponseDtoList.add(orderResponseDto);
 		}
 		return orderResponseDtoList;
+
+		/* stream 으로 하는 방법
+	`	@Transactional(readOnly = true)
+		public List<OrderResponseDto> getOrderList(Long storeId) {
+    	Store store = entityFetcher.getStoreOrThrow(storeId);
+
+    	List<Order> orderList = orderRepository.findAllByStore(store);
+
+    	List<OrderResponseDto> orderResponseDtoList = orderList.stream()
+        .map(order -> new OrderResponseDto(order))
+        .collect(Collectors.toList());
+
+    	return orderResponseDtoList;
+		}
+		 */
 	}
 
 	// 3. 주문 상태 변경 API
