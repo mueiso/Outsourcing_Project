@@ -63,8 +63,8 @@ public class EntityFetcher {
 	}
 
 	// 엔티티 한번에 조회할 메서드
-	public OrderEntities fetchOrderEntities(Long id, OrderRequestDto dto) {
-		User user = getUserOrThrow(id);
+	public OrderEntities fetchOrderEntities(Long userId, OrderRequestDto dto) {
+		User user = getUserOrThrow(userId);
 		Store store = getStoreOrThrow(dto.getStoreId());
 		Menu menu = getMenuOrThrow(dto.getMenuId());
 
@@ -78,4 +78,5 @@ public class EntityFetcher {
 		}
 		return StoreStatus.PREPARING;
 	}
+
 }

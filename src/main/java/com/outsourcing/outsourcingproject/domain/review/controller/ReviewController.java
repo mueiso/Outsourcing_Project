@@ -51,7 +51,6 @@ public class ReviewController {
 		reviewService.createOwnerReview(id, requestDto, token);
 		return new ResponseEntity<>(CommonResponse.of(SuccessCode.CREATE_OWNER_REVIEW), HttpStatus.OK);
 	}
-	//
 
 	// 가게 리뷰 조회 (최신 순, 별점 별 조회 : 페이징 처리예정)
 	@GetMapping("/stores/{storeId}/reviews")

@@ -58,7 +58,7 @@ public class OrderService {
 			throw new CustomException(ErrorCode.STORE_NOT_OPEN);
 		}
 
-		// 엔티티 조회
+		// 엔티티 한 번에 모두 조회
 		OrderEntities entities = entityFetcher.fetchOrderEntities(userId, orderRequestDto);
 
 		// 새로운 주문 생성

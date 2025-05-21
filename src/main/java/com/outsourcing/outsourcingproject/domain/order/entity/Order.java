@@ -30,7 +30,7 @@ public class Order extends BaseEntity {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	@ManyToOne(fetch = FetchType.LAZY) // order.getUser(); 할 때 쿼리 발생시키기 위함
+	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "user_id")
 	private User user;
 
@@ -61,23 +61,7 @@ public class Order extends BaseEntity {
 		this.menu = menu;
 		this.deliveryStatus = deliveryStatus;
 	}
-
-	public void waiting() {
-		this.deliveryStatus = DeliveryStatus.WAITING;
-	}
-
-	public void confirm() {
-		this.deliveryStatus = DeliveryStatus.CONFIRMED;
-	}
-
-	public void reject() {
-		this.deliveryStatus = DeliveryStatus.REJECTED;
-	}
-
-	public void complete() {
-		this.deliveryStatus = DeliveryStatus.COMPLETED;
-	}
-
+	
 	public void updateDeliveryStatus(DeliveryStatus deliveryStatus) {
 		this.deliveryStatus = deliveryStatus;
 	}
