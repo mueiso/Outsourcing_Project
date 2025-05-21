@@ -31,11 +31,11 @@ public class OrderService {
 	private final JwtUtil jwtUtil;
 
     /*
-    1. 주문 요청 생성
-    2. 주문 수락/거절
-    3. 주문 단건 조회
-    4. 주문 요청 취소
-     */
+	1. 주문 요청 생성
+	2. 주문 목록 조회
+	3. 주문 상태 변경
+	4. 주문 요청 취소
+	 */
 
 	// 1. 주문 생성
 	@Transactional
