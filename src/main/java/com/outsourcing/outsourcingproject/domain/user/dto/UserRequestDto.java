@@ -15,7 +15,7 @@ import lombok.Getter;
 public class UserRequestDto {
 	@NotBlank(message = "이메일을 입력해주세요.")
 	@Size(max = 50, message = "이메일은 최대 50글자여야 합니다.")
-	@Email(message = "이메일 형식이어야 합니다.")
+	@Email(message = "이메일 형식으로 작성해주세요.")
 	private final String email;
 
 	@NotBlank(message = "비밀번호를 입력해주세요.")
